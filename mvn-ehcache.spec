@@ -4,11 +4,15 @@
 #
 Name     : mvn-ehcache
 Version  : 3.3.1
-Release  : 1
+Release  : 2
 URL      : https://github.com/ehcache/ehcache3/archive/v3.3.1.tar.gz
 Source0  : https://github.com/ehcache/ehcache3/archive/v3.3.1.tar.gz
-Source1  : https://repo1.maven.org/maven2/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.jar
-Source2  : https://repo1.maven.org/maven2/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.pom
+Source1  : https://repo1.maven.org/maven2/net/sf/ehcache/ehcache-parent/2.16/ehcache-parent-2.16.pom
+Source2  : https://repo1.maven.org/maven2/net/sf/ehcache/ehcache-root/2.8.5/ehcache-root-2.8.5.pom
+Source3  : https://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.5/ehcache-2.8.5.jar
+Source4  : https://repo1.maven.org/maven2/net/sf/ehcache/ehcache/2.8.5/ehcache-2.8.5.pom
+Source5  : https://repo1.maven.org/maven2/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.jar
+Source6  : https://repo1.maven.org/maven2/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -31,11 +35,23 @@ data components for the mvn-ehcache package.
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache-parent/2.16
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache-parent/2.16/ehcache-parent-2.16.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache-root/2.8.5
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache-root/2.8.5/ehcache-root-2.8.5.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache/2.8.5
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache/2.8.5/ehcache-2.8.5.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache/2.8.5
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/net/sf/ehcache/ehcache/2.8.5/ehcache-2.8.5.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.pom
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.pom
 
 
 %files
@@ -43,5 +59,9 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/ehcache/ehcache/3.3
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/net/sf/ehcache/ehcache-parent/2.16/ehcache-parent-2.16.pom
+/usr/share/java/.m2/repository/net/sf/ehcache/ehcache-root/2.8.5/ehcache-root-2.8.5.pom
+/usr/share/java/.m2/repository/net/sf/ehcache/ehcache/2.8.5/ehcache-2.8.5.jar
+/usr/share/java/.m2/repository/net/sf/ehcache/ehcache/2.8.5/ehcache-2.8.5.pom
 /usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.jar
 /usr/share/java/.m2/repository/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.pom
