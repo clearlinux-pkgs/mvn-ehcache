@@ -4,7 +4,7 @@
 #
 Name     : mvn-ehcache
 Version  : 3.3.1
-Release  : 7
+Release  : 8
 URL      : https://github.com/ehcache/ehcache3/archive/v3.3.1.tar.gz
 Source0  : https://github.com/ehcache/ehcache3/archive/v3.3.1.tar.gz
 Source1  : https://repo1.maven.org/maven2/net/sf/ehcache/ehcache-core/2.4.4/ehcache-core-2.4.4.jar
@@ -24,7 +24,7 @@ Source14  : https://repo1.maven.org/maven2/org/ehcache/ehcache/3.3.1/ehcache-3.3
 Source15  : https://repo1.maven.org/maven2/org/ehcache/ehcache/3.3.1/ehcache-3.3.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0
+License  : Apache-2.0 Distributable
 Requires: mvn-ehcache-data = %{version}-%{release}
 Requires: mvn-ehcache-license = %{version}-%{release}
 BuildRequires : buildreq-mvn
